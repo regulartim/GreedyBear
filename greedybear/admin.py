@@ -58,7 +58,12 @@ class CowrieSessionModelAdmin(admin.ModelAdmin):
 
 @admin.register(CommandSequence)
 class CommandSequenceModelAdmin(admin.ModelAdmin):
-    list_display = ["first_seen", "last_seen", "cluster", "commands", "commands_hash"]
+    def command_sequence_seen_count(self, obj):
+        return obj.cowriesession_set.count()
+
+    command_sequence_seen_count.short_description = "times seen"
+
+    list_display = ["first_seen", "last_seen", "command_sequence_seen_count", "cluster", "commands", "commands_hash"]
     inlines = [SessionInline]
     search_fields = ["source__name", "commands_hash"]
     list_filter = ["cluster", "commands_hash"]
