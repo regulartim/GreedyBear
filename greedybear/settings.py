@@ -92,7 +92,7 @@ INSTALLED_APPS = [
 ]
 
 # required by the certego-saas, but GreedyBear doesn't use the recaptcha, for this reason is filled with a placeholder
-DRF_RECAPTCHA_SECRET_KEY = "not-active"
+DRF_RECAPTCHA_SECRET_KEY = "not-active"  # nosec B105 - intentional placeholder, recaptcha is not used
 
 REST_FRAMEWORK = {
     "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"],
@@ -108,14 +108,14 @@ REST_FRAMEWORK = {
 # Django-Rest-Durin
 REST_DURIN = {
     "DEFAULT_TOKEN_TTL": timedelta(days=14),
-    "TOKEN_CHARACTER_LENGTH": 32,
+    "TOKEN_CHARACTER_LENGTH": 32,  # nosec B105 - integer config value, not a password
     "USER_SERIALIZER": "certego_saas.apps.user.serializers.UserSerializer",
     "AUTH_HEADER_PREFIX": "Token",
-    "TOKEN_CACHE_TIMEOUT": 300,  # 5 minutes
-    "REFRESH_TOKEN_ON_LOGIN": True,
+    "TOKEN_CACHE_TIMEOUT": 300,  # nosec B105 - integer config value, not a password (5 minutes)
+    "REFRESH_TOKEN_ON_LOGIN": True,  # nosec B105 - boolean config value, not a password
     "API_ACCESS_CLIENT_NAME": "pygreedybear",
     "API_ACCESS_EXCLUDE_FROM_SESSIONS": True,
-    "API_ACCESS_RESPONSE_INCLUDE_TOKEN": True,
+    "API_ACCESS_RESPONSE_INCLUDE_TOKEN": True,  # nosec B105 - boolean config value, not a password
     # not part of durin but used in data migration
     "API_ACCESS_CLIENT_TOKEN_TTL": timedelta(days=3650),
 }
@@ -125,7 +125,7 @@ REST_EMAIL_AUTH = {
     "EMAIL_VERIFICATION_URL": HOST_URI + "/verify-email?key={key}",
     "PASSWORD_RESET_URL": HOST_URI + "/reset-password?key={key}",
     "REGISTRATION_SERIALIZER": "authentication.serializers.RegistrationSerializer",
-    "EMAIL_VERIFICATION_PASSWORD_REQUIRED": False,
+    "EMAIL_VERIFICATION_PASSWORD_REQUIRED": False,  # nosec B105 - boolean config value, not a password
     "EMAIL_SUBJECT_VERIFICATION": "GreedyBear - Please Verify Your Email Address",
     "EMAIL_SUBJECT_DUPLICATE": "GreedyBear - Registration Attempt",
     "PATH_TO_VERIFY_EMAIL_TEMPLATE": "authentication/emails/verify-email",

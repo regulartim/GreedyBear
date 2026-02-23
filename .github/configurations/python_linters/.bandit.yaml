@@ -1,5 +1,7 @@
 skips:
   - B101 # assert_used
+  - B104 # hardcoded_bind_all_interfaces - false positives in tests validating 0.0.0.0 edge cases
+  - B311 # pseudo-random generators - acceptable for non-cryptographic test data generation
 
 try_except_pass:
   check_typed_exception: false
@@ -7,3 +9,4 @@ try_except_pass:
 exclude_dirs:
   - local.env
   - migrations
+  - tests
