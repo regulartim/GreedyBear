@@ -10,13 +10,13 @@ import { HACKER_MEME_STRING } from "../../../../src/constants";
 
 describe("Compare Password", () => {
   test("Password do match", () => {
-    const password = "GreedyBearPassword";
-    const confirmPassword = "GreedyBearPassword";
+    const password = "HoneyBadgerPassword";
+    const confirmPassword = "HoneyBadgerPassword";
     expect(ComparePassword(password, confirmPassword)).toEqual({});
   });
   test("Password do not match", () => {
-    const password = "greedybearpassword";
-    const confirmPassword = "GreedyBearPassword";
+    const password = "honeybadgerpassword";
+    const confirmPassword = "HoneyBadgerPassword";
     expect(ComparePassword(password, confirmPassword)).toEqual({
       password: "Passwords do not match.",
       confirmPassword: "Passwords do not match.",
@@ -26,7 +26,7 @@ describe("Compare Password", () => {
 
 describe("Password", () => {
   test("Valid password", () => {
-    const password = "GreedyBearPassword";
+    const password = "HoneyBadgerPassword";
     expect(PasswordValidator(password)).toEqual({});
   });
   test("Required password", () => {
@@ -45,7 +45,7 @@ describe("Password", () => {
       password:
         "The password is entirely numeric or contains special characters",
     });
-    const password = "$GreedyBearPassword$";
+    const password = "$HoneyBadgerPassword$";
     expect(PasswordValidator(password)).toEqual({
       password:
         "The password is entirely numeric or contains special characters",

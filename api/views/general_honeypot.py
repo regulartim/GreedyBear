@@ -1,9 +1,9 @@
-# This file is a part of GreedyBear https://github.com/honeynet/GreedyBear
+# This file is a part of HoneyBadger https://github.com/honeybadger/HoneyBadger
 # See the file 'LICENSE' for copying permission.
 import logging
 
-from greedybear.consts import GET
-from greedybear.models import GeneralHoneypot
+from honeybadger.consts import GET
+from honeybadger.models import GeneralHoneypot
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 

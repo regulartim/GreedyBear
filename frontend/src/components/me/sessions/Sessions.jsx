@@ -1,7 +1,7 @@
 import React from "react";
 import { Alert, Container, Row } from "reactstrap";
 
-import { ContentSection } from "@certego/certego-ui";
+import { ContentSection } from "@badgercorp/badgercorp-ui";
 
 import SessionsList from "./SessionList";
 import APIAccess from "./APIaccess";
@@ -15,7 +15,7 @@ export default function Sessions() {
       <Row className="my-4">
         <Alert color="secondary" className="mx-3 mx-md-auto text-center">
           <span>
-            You can generate an API key to access GreedyBear&apos;s RESTful
+            You can generate an API key to access HoneyBadger&apos;s RESTful
             API.&nbsp;
           </span>
         </Alert>

@@ -6,7 +6,7 @@ import {
   IconButton,
   DateHoverable,
   useAxiosComponentLoader,
-} from "@certego/certego-ui";
+} from "@badgercorp/badgercorp-ui";
 
 import { deleteTokenById } from "./api";
 import { SESSIONS_BASE_URI } from "../../../constants/api";

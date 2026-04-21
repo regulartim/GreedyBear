@@ -1,7 +1,7 @@
 import axios from "axios";
 import create from "zustand";
 
-import { addToast } from "@certego/certego-ui";
+import { addToast } from "@badgercorp/badgercorp-ui";
 
 import {
   USERACCESS_URI,
@@ -39,7 +39,7 @@ const useAuthStore = create((set, get) => ({
     fetchUserAccess: async () => {
       try {
         const resp = await axios.get(USERACCESS_URI, {
-          certegoUIenableProgressBar: false,
+          badgercorpUIenableProgressBar: false,
           headers: { "Content-Type": "application/json" },
         });
         set({
@@ -61,7 +61,7 @@ const useAuthStore = create((set, get) => ({
           body,
           { headers: { "Content-Type": "application/json" } },
           {
-            certegoUIenableProgressBar: false,
+            badgercorpUIenableProgressBar: false,
           }
         );
         set({ isAuthenticated: AUTHENTICATION_STATUSES.TRUE });
@@ -81,7 +81,7 @@ const useAuthStore = create((set, get) => ({
       };
       return axios
         .post(LOGOUT_URI, null, {
-          certegoUIenableProgressBar: false,
+          badgercorpUIenableProgressBar: false,
         })
         .then(onLogoutCb)
         .catch(onLogoutCb);

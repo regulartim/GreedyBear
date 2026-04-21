@@ -8,7 +8,7 @@ import {
   Select,
   useAxiosComponentLoader,
   useDataTable,
-} from "@certego/certego-ui";
+} from "@badgercorp/badgercorp-ui";
 import { Form, Formik } from "formik";
 import { feedsTableColumns } from "./tableColumns";
 import { FEEDS_LICENSE } from "../../constants";

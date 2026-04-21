@@ -1,5 +1,5 @@
 import numpy as np
-from greedybear.cronjobs.commands.cluster import compute_similarity_matrix, jaccard_similarity, tokenize
+from honeybadger.cronjobs.commands.cluster import compute_similarity_matrix, jaccard_similarity, tokenize
 
 from . import CustomTestCase
 

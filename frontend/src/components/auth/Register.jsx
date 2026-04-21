@@ -14,7 +14,7 @@ import {
 import { Form, Formik } from "formik";
 import useTitle from "react-use/lib/useTitle";
 
-import { ContentSection, Select } from "@certego/certego-ui";
+import { ContentSection, Select } from "@badgercorp/badgercorp-ui";
 
 import {
   AfterRegistrationModalAlert,
@@ -149,7 +149,7 @@ export default function Register() {
   console.debug("Register rendered!");
 
   // page title
-  useTitle("GreedyBear | Sign up", { restoreOnUnmount: true });
+  useTitle("HoneyBadger | Sign up", { restoreOnUnmount: true });
 
   // local state
   const [showAfterRegistrationModal, setShowAfterRegistrationModal] =
@@ -409,7 +409,7 @@ export default function Register() {
                 </FormGroup>
                 <Col sm={12} md={12} className="text-center standout alert">
                   We ask you to provide the following information to better
-                  understand what you intend to use GreedyBear for
+                  understand what you intend to use HoneyBadger for
                 </Col>
                 {/* Extra fields */}
                 <FormGroup row>
@@ -481,7 +481,7 @@ export default function Register() {
                         name="twitter_handle"
                         type="text"
                         className="form-control"
-                        placeholder="greedybear"
+                        placeholder="honeybadger"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.twitter_handle}
@@ -497,7 +497,7 @@ export default function Register() {
                       className="form-control-label required"
                       htmlFor="RegisterForm__discover_from"
                     >
-                      How did you discover GreedyBear ?
+                      How did you discover HoneyBadger ?
                     </Label>
                     <Select
                       id="RegisterForm__discover_from"

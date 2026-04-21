@@ -1,12 +1,12 @@
-# This file is a part of GreedyBear https://github.com/honeynet/GreedyBear
+# This file is a part of HoneyBadger https://github.com/honeybadger/HoneyBadger
 # See the file 'LICENSE' for copying permission.
 import logging
 
 from api.views.utils import is_ip_address, is_sha256hash
-from certego_saas.apps.auth.backend import CookieTokenAuthentication
+from badgercorp_saas.apps.auth.backend import CookieTokenAuthentication
 from django.http import Http404, HttpResponseBadRequest
-from greedybear.consts import FEEDS_LICENSE, GET
-from greedybear.models import IOC, CommandSequence, CowrieSession, Statistics, viewType
+from honeybadger.consts import FEEDS_LICENSE, GET
+from honeybadger.models import IOC, CommandSequence, CowrieSession, Statistics, viewType
 from rest_framework import status
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework.permissions import IsAuthenticated

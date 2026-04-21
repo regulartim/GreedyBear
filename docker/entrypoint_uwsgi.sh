@@ -2,10 +2,10 @@
 
 date
 echo "starting wait_for_it for uwsgi"
-/opt/deploy/greedybear/docker/wait-for-it.sh -t 15 postgres:$DB_PORT
+/opt/deploy/honeybadger/docker/wait-for-it.sh -t 15 postgres:$DB_PORT
 date
 
-until cd /opt/deploy/greedybear
+until cd /opt/deploy/honeybadger
 do
     echo "Waiting for server volume..."
 done
@@ -27,5 +27,5 @@ if [[ $DEBUG == "True" ]] && [[ $DJANGO_TEST_SERVER == "True" ]];
 then
     python manage.py runserver 0.0.0.0:8001
 else
-    /usr/local/bin/uwsgi --ini /etc/uwsgi/sites/greedybear.ini  --stats 127.0.0.1:1717 --stats-http
+    /usr/local/bin/uwsgi --ini /etc/uwsgi/sites/honeybadger.ini  --stats 127.0.0.1:1717 --stats-http
 fi

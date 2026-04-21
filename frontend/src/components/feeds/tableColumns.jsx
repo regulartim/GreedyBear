@@ -1,4 +1,4 @@
-import { BooleanIcon } from "@certego/certego-ui";
+import { BooleanIcon } from "@badgercorp/badgercorp-ui";
 
 // costants
 const feedsTableColumns = [

@@ -3,19 +3,19 @@ import "./Home.scss";
 import React from "react";
 import { Container } from "reactstrap";
 
-import { ContentSection } from "@certego/certego-ui";
+import { ContentSection } from "@badgercorp/badgercorp-ui";
 
 import { PUBLIC_URL, VERSION } from "../../constants/environment";
 
 const versionText = VERSION;
 // const versionText = "v1.0.0";
-const logoBgImg = `url('${PUBLIC_URL}/greedybear.png')`;
+const logoBgImg = `url('${PUBLIC_URL}/honeybadger.png')`;
 const blogPosts = [
   {
-    title: "New project available: GreedyBear",
-    subText: "Honeynet Blog: Official announcement",
+    title: "New project available: HoneyBadger",
+    subText: "HoneyBadger Blog: Official announcement",
     date: "27th December 2021",
-    link: "https://www.honeynet.org/2021/12/27/new-project-available-greedybear/",
+    link: "https://www.honeybadger.org/2021/12/27/new-project-available-honeybadger/",
   },
 ];
 
@@ -43,7 +43,7 @@ function Home() {
         </ContentSection>
         <br />
         {/* blogPosts */}
-        <h5 className="text-gradient">GreedyBear News</h5>
+        <h5 className="text-gradient">HoneyBadger News</h5>
         <ContentSection>
           {blogPosts.map(({ title, subText, date, link }) => (
             <ContentSection key={title} className="border-dark bg-body">

@@ -12,7 +12,7 @@ import {
   CopyToClipboardButton,
   useAxiosComponentLoader,
   confirm,
-} from "@certego/certego-ui";
+} from "@badgercorp/badgercorp-ui";
 
 import { createNewToken, deleteToken } from "./api";
 import { APIACCESS_BASE_URI } from "../../../constants/api";
@@ -53,7 +53,7 @@ export default function APIAccess() {
           </p>
           <p>
             Once deleted, you cannot use this API key to access
-            GreedyBear&apos;s API. However, you will be able to generate a new
+            HoneyBadger&apos;s API. However, you will be able to generate a new
             one.
           </p>
           Are you sure you wish to proceed ?

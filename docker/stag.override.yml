@@ -1,12 +1,12 @@
 services:
   uwsgi:
-    image: intelowlproject/greedybear:stag
+    image: honeybadgerproject/honeybadger:stag
 
   nginx:
-    image: intelowlproject/greedybear_nginx:stag
+    image: honeybadgerproject/honeybadger_nginx:stag
 
   celery_beat:
-    image: intelowlproject/greedybear:stag
+    image: honeybadgerproject/honeybadger:stag
 
   celery_worker_default:
-    image: intelowlproject/greedybear:stag
+    image: honeybadgerproject/honeybadger:stag

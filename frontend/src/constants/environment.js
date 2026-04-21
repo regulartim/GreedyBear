@@ -1,6 +1,6 @@
-export const GREEDYBEAR_DOCS_URL =
-  "https://intelowlproject.github.io/docs/GreedyBear/Introduction/";
+export const HONEYBADGER_DOCS_URL =
+  "https://honeybadgerproject.github.io/docs/HoneyBadger/Introduction/";
 
 // env variables
-export const VERSION = process.env.REACT_APP_GREEDYBEAR_VERSION;
+export const VERSION = process.env.REACT_APP_HONEYBADGER_VERSION;
 export const { PUBLIC_URL } = process.env;

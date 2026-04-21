@@ -1,13 +1,13 @@
-# you have to populate the ENV variable REACT_APP_INTELOWL_VERSION in the .env file to have this work
+# you have to populate the ENV variable REACT_APP_HONEYBADGER_VERSION in the .env file to have this work
 services:
   uwsgi:
-    image: intelowlproject/greedybear:${REACT_APP_INTELOWL_VERSION}
+    image: honeybadgerproject/honeybadger:${REACT_APP_HONEYBADGER_VERSION}
 
   nginx:
-    image: intelowlproject/greedybear_nginx:${REACT_APP_INTELOWL_VERSION}
+    image: honeybadgerproject/honeybadger_nginx:${REACT_APP_HONEYBADGER_VERSION}
 
   celery_beat:
-    image: intelowlproject/greedybear:${REACT_APP_INTELOWL_VERSION}
+    image: honeybadgerproject/honeybadger:${REACT_APP_HONEYBADGER_VERSION}
 
   celery_worker_default:
-    image: intelowlproject/greedybear:${REACT_APP_INTELOWL_VERSION}
+    image: honeybadgerproject/honeybadger:${REACT_APP_HONEYBADGER_VERSION}

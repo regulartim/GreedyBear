@@ -1,6 +1,6 @@
 from api.views.utils import is_ip_address, is_sha256hash
-from greedybear.consts import FEEDS_LICENSE
-from greedybear.models import GeneralHoneypot, Statistics, viewType
+from honeybadger.consts import FEEDS_LICENSE
+from honeybadger.models import GeneralHoneypot, Statistics, viewType
 from rest_framework.test import APIClient
 
 from . import CustomTestCase

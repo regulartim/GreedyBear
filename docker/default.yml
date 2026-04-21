@@ -5,19 +5,19 @@ x-no-healthcheck: &no-healthcheck
 services:
   postgres:
     image: library/postgres:13-alpine
-    container_name: greedybear_postgres
+    container_name: honeybadger_postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./env_file_postgres
 
   uwsgi:
-    image: intelowlproject/greedybear:prod
-    container_name: greedybear_uwsgi
+    image: honeybadgerproject/honeybadger:prod
+    container_name: honeybadger_uwsgi
     volumes:
-      - ../configuration/uwsgi/greedybear.ini:/etc/uwsgi/sites/greedybear.ini
-      - generic_logs:/var/log/greedybear
-      - static_content:/opt/deploy/greedybear/static
+      - ../configuration/uwsgi/honeybadger.ini:/etc/uwsgi/sites/honeybadger.ini
+      - generic_logs:/var/log/honeybadger
+      - static_content:/opt/deploy/honeybadger/static
     entrypoint:
       - ./docker/entrypoint_uwsgi.sh
     expose:
@@ -29,8 +29,8 @@ services:
       - postgres
 
   nginx:
-    image: intelowlproject/greedybear_nginx:prod
-    container_name: greedybear_nginx
+    image: honeybadgerproject/honeybadger_nginx:prod
+    container_name: honeybadger_nginx
     restart: unless-stopped
     volumes:
       - ../configuration/nginx/http.conf:/etc/nginx/conf.d/default.conf
@@ -45,7 +45,7 @@ services:
 
   rabbitmq:
     image: library/rabbitmq:4-alpine
-    container_name: greedybear_rabbitmq
+    container_name: honeybadger_rabbitmq
     volumes:
       - ../configuration/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
     logging:
@@ -54,12 +54,12 @@ services:
       - postgres
 
   celery_beat:
-    image: intelowlproject/greedybear:prod
-    container_name: greedybear_celery_beat
+    image: honeybadgerproject/honeybadger:prod
+    container_name: honeybadger_celery_beat
     restart: unless-stopped
-    command: /usr/local/bin/celery -A greedybear.celery beat --uid www-data --gid www-data --pidfile= --schedule=/tmp/celerybeat-schedule
+    command: /usr/local/bin/celery -A honeybadger.celery beat --uid www-data --gid www-data --pidfile= --schedule=/tmp/celerybeat-schedule
     volumes:
-      - generic_logs:/var/log/greedybear
+      - generic_logs:/var/log/honeybadger
     env_file:
       - env_file
     depends_on:
@@ -69,14 +69,14 @@ services:
     <<: *no-healthcheck
 
   celery_worker_default:
-    image: intelowlproject/greedybear:prod
-    container_name: greedybear_celery_worker_default
+    image: honeybadgerproject/honeybadger:prod
+    container_name: honeybadger_celery_worker_default
     restart: unless-stopped
     stop_grace_period: 3m
-    command: /usr/local/bin/celery -A greedybear.celery worker -n worker_default --uid www-data --gid www-data --time-limit=10000 --pidfile= -Ofair -Q default -E -c 1
+    command: /usr/local/bin/celery -A honeybadger.celery worker -n worker_default --uid www-data --gid www-data --time-limit=10000 --pidfile= -Ofair -Q default -E -c 1
     volumes:
-      - generic_logs:/var/log/greedybear
-      - mlmodels:/opt/deploy/greedybear/mlmodels
+      - generic_logs:/var/log/honeybadger
+      - mlmodels:/opt/deploy/honeybadger/mlmodels
     env_file:
       - env_file
     depends_on:

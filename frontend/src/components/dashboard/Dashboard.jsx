@@ -5,7 +5,7 @@ import {
   ElasticTimePicker,
   useTimePickerStore,
   SmallInfoCard,
-} from "@certego/certego-ui";
+} from "@badgercorp/badgercorp-ui";
 
 import {
   FeedsSourcesChart,

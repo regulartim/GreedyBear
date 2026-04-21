@@ -1,4 +1,4 @@
-# This file is a part of GreedyBear https://github.com/honeynet/GreedyBear
+# This file is a part of HoneyBadger https://github.com/honeybadger/HoneyBadger
 # See the file 'LICENSE' for copying permission.
 
 from django.urls import include, path
@@ -46,7 +46,7 @@ urlpatterns = [
     path("login", LoginView.as_view(), name="auth_login"),
     path("configuration", checkConfiguration),
     # auth
-    path("", include("certego_saas.apps.auth.urls")),
+    path("", include("badgercorp_saas.apps.auth.urls")),
     path("apiaccess", APIAccessTokenView.as_view(), name="auth_apiaccess"),
     path("authentication", checkAuthentication),
     path("", include(router.urls)),

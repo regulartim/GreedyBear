@@ -50,8 +50,8 @@ describe("Registration component", () => {
     await user.type(lastNameInputElement, "lastname");
     await user.type(emailInputElement, "test@test.com");
     await user.type(usernameInputElement, "test_user");
-    await user.type(passwordInputElement, "GreedyBearPassword");
-    await user.type(confirmPasswordInputElement, "GreedyBearPassword");
+    await user.type(passwordInputElement, "HoneyBadgerPassword");
+    await user.type(confirmPasswordInputElement, "HoneyBadgerPassword");
     await user.type(companyNameInputElement, "companyname");
     await user.type(companyRoleInputElement, "companyrole");
     await user.click(submitButtonElement);
@@ -63,7 +63,7 @@ describe("Registration component", () => {
         last_name: "lastname",
         username: "test_user",
         email: "test@test.com",
-        password: "GreedyBearPassword",
+        password: "HoneyBadgerPassword",
         profile: {
           company_name: "companyname",
           company_role: "companyrole",

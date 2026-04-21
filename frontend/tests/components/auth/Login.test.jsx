@@ -55,7 +55,7 @@ describe("Login component", () => {
         LOGIN_URI,
         { password: "dummyPwd1", username: "test_user" },
         { headers: { "Content-Type": "application/json" } },
-        { certegoUIenableProgressBar: false }
+        { badgercorpUIenableProgressBar: false }
       );
     });
   });

@@ -12,7 +12,7 @@ import {
 import { MdInfoOutline } from "react-icons/md";
 import { Form, Formik } from "formik";
 
-import { ContentSection } from "@certego/certego-ui";
+import { ContentSection } from "@badgercorp/badgercorp-ui";
 
 import { useAuthStore } from "../../stores";
 import {
@@ -79,7 +79,7 @@ function Login() {
             </h5>
             <p>
               If you do not have an account please contact a member of The
-              Honeynet Project who will provide you with credentials to log in
+              HoneyBadger Project who will provide you with credentials to log in
             </p>
           </Alert>
           {/* Form */}

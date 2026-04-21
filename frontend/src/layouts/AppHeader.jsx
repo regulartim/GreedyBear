@@ -13,10 +13,10 @@ import { RiBookReadFill } from "react-icons/ri";
 import { GoDashboard } from "react-icons/go";
 
 // lib
-import { NavLink } from "@certego/certego-ui";
+import { NavLink } from "@badgercorp/badgercorp-ui";
 
 // constants
-import { GREEDYBEAR_DOCS_URL } from "../constants/environment";
+import { HONEYBADGER_DOCS_URL } from "../constants/environment";
 
 // local
 import UserMenu from "./widget/UserMenu";
@@ -48,7 +48,7 @@ const rightLinks = (
   <NavItem>
     <a
       className="d-flex-start-center btn text-gray"
-      href={GREEDYBEAR_DOCS_URL}
+      href={HONEYBADGER_DOCS_URL}
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -74,7 +74,7 @@ function AppHeader() {
       {/* nav bar */}
       <Navbar dark expand="lg">
         <NavbarBrand tag={RRNavLink} to="/">
-          GreedyBear
+          HoneyBadger
         </NavbarBrand>
         <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
         <Collapse navbar isOpen={isOpen}>

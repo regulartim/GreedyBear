@@ -1,12 +1,12 @@
-# This file is a part of GreedyBear https://github.com/honeynet/GreedyBear
+# This file is a part of HoneyBadger https://github.com/honeybadger/HoneyBadger
 # See the file 'LICENSE' for copying permission.
 import logging
 
-from certego_saas.ext.helpers import parse_humanized_range
+from badgercorp_saas.ext.helpers import parse_humanized_range
 from django.db.models import Count, Q
 from django.db.models.functions import Trunc
 from django.http import HttpResponseServerError
-from greedybear.models import IOC, GeneralHoneypot, Statistics, viewType
+from honeybadger.models import IOC, GeneralHoneypot, Statistics, viewType
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response

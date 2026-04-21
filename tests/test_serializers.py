@@ -3,8 +3,8 @@ from itertools import product
 
 from api.serializers import FeedsRequestSerializer, FeedsResponseSerializer
 from django.test import TestCase
-from greedybear.consts import PAYLOAD_REQUEST, SCANNER
-from greedybear.models import IOC, GeneralHoneypot
+from honeybadger.consts import PAYLOAD_REQUEST, SCANNER
+from honeybadger.models import IOC, GeneralHoneypot
 from rest_framework.serializers import ValidationError
 
 

@@ -8,7 +8,7 @@ import {
 import { FiLogOut } from "react-icons/fi";
 import { IoMdKey, IoMdSettings } from "react-icons/io";
 
-import { UserBubble, DropdownNavLink } from "@certego/certego-ui";
+import { UserBubble, DropdownNavLink } from "@badgercorp/badgercorp-ui";
 
 import { useAuthStore } from "../../stores";
 

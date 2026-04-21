@@ -1,18 +1,18 @@
-# This file is a part of GreedyBear https://github.com/honeynet/GreedyBear
+# This file is a part of HoneyBadger https://github.com/honeybadger/HoneyBadger
 # See the file 'LICENSE' for copying permission.
 import logging
 import re
 
 import rest_email_auth.serializers
-from certego_saas.ext.upload import Slack
-from certego_saas.models import User
-from certego_saas.settings import certego_apps_settings
+from badgercorp_saas.ext.upload import Slack
+from badgercorp_saas.models import User
+from badgercorp_saas.settings import badgercorp_apps_settings
 from django.conf import settings
 from django.contrib.auth import password_validation
 from django.core.exceptions import ValidationError
 from django.db import DatabaseError, transaction
 from django.utils.translation import gettext_lazy as _
-from greedybear.consts import REGEX_PASSWORD
+from honeybadger.consts import REGEX_PASSWORD
 from rest_framework import serializers as rfs
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from slack_sdk.errors import SlackApiError
@@ -118,10 +118,10 @@ class EmailVerificationSerializer(rest_email_auth.serializers.EmailVerificationS
             super().save()
 
         # Send msg on slack
-        if certego_apps_settings.SLACK_TOKEN and certego_apps_settings.DEFAULT_SLACK_CHANNEL:
+        if badgercorp_apps_settings.SLACK_TOKEN and badgercorp_apps_settings.DEFAULT_SLACK_CHANNEL:
             try:
                 userprofile = user.user_profile
-                user_admin_link = f"{settings.HOST_URI}/admin/certego_saas_user/user/{user.pk}"
+                user_admin_link = f"{settings.HOST_URI}/admin/badgercorp_saas_user/user/{user.pk}"
                 userprofile_admin_link = f"{settings.HOST_URI}" f"/admin/authentication/userprofile/{userprofile.pk}"
                 slack = Slack()
                 slack.send_message(
@@ -133,7 +133,7 @@ class EmailVerificationSerializer(rest_email_auth.serializers.EmailVerificationS
                         f"{userprofile.company_role}, )"
                         f"<{userprofile_admin_link} |admin link>)"
                     ),
-                    channel=certego_apps_settings.DEFAULT_SLACK_CHANNEL,
+                    channel=badgercorp_apps_settings.DEFAULT_SLACK_CHANNEL,
                 )
             except SlackApiError as exc:
                 slack.log.error(f"Slack message failed for user(#{user.pk}) with error: {str(exc)}")

@@ -1,11 +1,11 @@
-# This file is a part of GreedyBear https://github.com/honeynet/GreedyBear
+# This file is a part of HoneyBadger https://github.com/honeybadger/HoneyBadger
 # See the file 'LICENSE' for copying permission.
 import logging
 
 from api.views.utils import FeedRequestParams, feeds_response, get_queryset, get_valid_feed_types
-from certego_saas.apps.auth.backend import CookieTokenAuthentication
-from certego_saas.ext.pagination import CustomPageNumberPagination
-from greedybear.consts import GET
+from badgercorp_saas.apps.auth.backend import CookieTokenAuthentication
+from badgercorp_saas.ext.pagination import CustomPageNumberPagination
+from honeybadger.consts import GET
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework.permissions import IsAuthenticated
 

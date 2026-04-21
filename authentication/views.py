@@ -2,16 +2,16 @@ import logging
 from typing import List
 
 import rest_email_auth.views
-from certego_saas.apps.auth import views as certego_views
-from certego_saas.apps.auth.backend import CookieTokenAuthentication
-from certego_saas.ext.throttling import POSTUserRateThrottle
+from badgercorp_saas.apps.auth import views as badgercorp_views
+from badgercorp_saas.apps.auth.backend import CookieTokenAuthentication
+from badgercorp_saas.ext.throttling import POSTUserRateThrottle
 from django.conf import settings
 from django.contrib.auth import get_user_model, login
 from django.core.cache import cache
 from durin import views as durin_views
-from greedybear.consts import GET
-from greedybear.enums import FrontendPage
-from greedybear.settings import AUTH_USER_MODEL
+from honeybadger.consts import GET
+from honeybadger.enums import FrontendPage
+from honeybadger.settings import AUTH_USER_MODEL
 from rest_framework import status
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework.permissions import IsAuthenticated
@@ -98,7 +98,7 @@ def checkConfiguration(request):
     return Response(status=status.HTTP_200_OK)
 
 
-class LoginView(certego_views.LoginView):
+class LoginView(badgercorp_views.LoginView):
     @staticmethod
     def validate_and_return_user(request):
         serializer = LoginSerializer(data=request.data)

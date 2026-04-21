@@ -1,4 +1,4 @@
-# This file is a part of GreedyBear https://github.com/honeynet/GreedyBear
+# This file is a part of HoneyBadger https://github.com/honeybadger/HoneyBadger
 # See the file 'LICENSE' for copying permission.
 from api.views import StatisticsViewSet, command_sequence_view, enrichment_view, feeds, feeds_advanced, feeds_pagination, general_honeypot_list
 from django.urls import include, path
@@ -18,9 +18,9 @@ urlpatterns = [
     path("general_honeypot", general_honeypot_list),
     # router viewsets
     path("", include(router.urls)),
-    # certego_saas:
+    # badgercorp_saas:
     # default apps (user),
-    path("", include("certego_saas.urls")),
+    path("", include("badgercorp_saas.urls")),
     # auth
     path("auth/", include("authentication.urls")),
 ]

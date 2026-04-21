@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate, useSearchParams } from "react-router-dom";
 import { Spinner } from "reactstrap";
-import { ContentSection } from "@certego/certego-ui";
+import { ContentSection } from "@badgercorp/badgercorp-ui";
 
 import { verifyEmail } from "./api";
 

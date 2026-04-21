@@ -5,8 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import Feeds from "../../../src/components/feeds/Feeds";
 
-jest.mock("@certego/certego-ui", () => {
-  const originalModule = jest.requireActual("@certego/certego-ui");
+jest.mock("@badgercorp/badgercorp-ui", () => {
+  const originalModule = jest.requireActual("@badgercorp/badgercorp-ui");
 
   const feeds = {
     count: 1,
@@ -65,7 +65,7 @@ describe("Feeds component", () => {
     });
     expect(buttonFeedsLicense).toHaveAttribute(
       "href",
-      "https://github.com/intelowlproject/GreedyBear/blob/main/FEEDS_LICENSE.md"
+      "https://github.com/honeybadgerproject/HoneyBadger/blob/main/FEEDS_LICENSE.md"
     );
 
     const feedTypeSelectElement = screen.getByLabelText("Feed type:");

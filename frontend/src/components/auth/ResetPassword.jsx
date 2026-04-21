@@ -4,7 +4,7 @@ import { FormGroup, Label, Col, Input, Button, Spinner } from "reactstrap";
 import { Form, Formik } from "formik";
 import useTitle from "react-use/lib/useTitle";
 
-import { ContentSection } from "@certego/certego-ui";
+import { ContentSection } from "@badgercorp/badgercorp-ui";
 
 import { UUID_REGEX } from "../../constants/index";
 import { resetPassword } from "./api";
@@ -48,7 +48,7 @@ export default function ResetPassword() {
   console.debug("ResetPassword rendered!");
 
   // page title
-  useTitle("GreedyBear | Reset Password", { restoreOnUnmount: true });
+  useTitle("HoneyBadger | Reset Password", { restoreOnUnmount: true });
 
   const [passwordShown, setPasswordShown] = React.useState(false);
 

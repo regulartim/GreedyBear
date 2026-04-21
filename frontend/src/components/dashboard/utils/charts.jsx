@@ -1,7 +1,7 @@
 import React from "react";
 import { Bar, Area } from "recharts";
 
-import { AnyChartWidget, getRandomColorsArray } from "@certego/certego-ui";
+import { AnyChartWidget, getRandomColorsArray } from "@badgercorp/badgercorp-ui";
 import {
   FEEDS_STATISTICS_SOURCES_URI,
   FEEDS_STATISTICS_DOWNLOADS_URI,

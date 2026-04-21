@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from greedybear.cronjobs.base import get_time_window
+from honeybadger.cronjobs.base import get_time_window
 
 from . import CustomTestCase
 

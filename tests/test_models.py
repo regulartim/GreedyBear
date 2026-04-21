@@ -1,4 +1,4 @@
-from greedybear.models import Statistics, iocType, viewType
+from honeybadger.models import Statistics, iocType, viewType
 
 from . import CustomTestCase
 

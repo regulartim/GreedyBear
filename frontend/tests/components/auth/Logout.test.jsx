@@ -34,7 +34,7 @@ describe("Logout component", () => {
 
     await waitFor(() => {
       expect(axios.post).toHaveBeenCalledWith(LOGOUT_URI, null, {
-        certegoUIenableProgressBar: false,
+        badgercorpUIenableProgressBar: false,
       });
     });
     expect(await screen.findByText("Logging you out...")).toBeInTheDocument();

@@ -46,7 +46,7 @@ export function UserFieldsValidator(field, value) {
 export function UsernameValidator(username) {
   const errors = UserFieldsValidator("username", username);
   if (
-    ["administrator", "admin", "certego", "hacker"].indexOf(username) !== -1
+    ["administrator", "admin", "badgercorp", "hacker"].indexOf(username) !== -1
   ) {
     errors.username = HACKER_MEME_STRING;
   }

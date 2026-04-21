@@ -30,7 +30,7 @@ class TestUserAuth(CustomOAuthTestCase):
             "password": "testregisteruser",
             "profile": {
                 "company_name": "companytest",
-                "company_role": "greedybear test",
+                "company_role": "honeybadger test",
                 "twitter_handle": "@fake",
                 "discover_from": "other",
             },
@@ -55,7 +55,7 @@ class TestUserAuth(CustomOAuthTestCase):
         msg = (response, cookies_data)
 
         self.assertEqual(response.status_code, 200, msg=msg)
-        self.assertIn("CERTEGO_SAAS_AUTH_TOKEN", cookies_data, msg=msg)
+        self.assertIn("BADGERCORP_SAAS_AUTH_TOKEN", cookies_data, msg=msg)
 
         self.assertEqual(AuthToken.objects.count(), 1)
 
@@ -161,7 +161,7 @@ class TestUserAuth(CustomOAuthTestCase):
 
         # email assertions
         self.assertEqual(len(mail.outbox), 1)
-        self.assertEqual(mail.outbox[0].subject, "GreedyBear - Please Verify Your Email Address")
+        self.assertEqual(mail.outbox[0].subject, "HoneyBadger - Please Verify Your Email Address")
         self.assertEqual(mail.outbox[0].to[0], "testregisteruser@test.com")
 
         # response assertions
@@ -188,9 +188,9 @@ class TestUserAuth(CustomOAuthTestCase):
 
         # email assertions
         self.assertEqual(len(mail.outbox), 2)
-        self.assertEqual(mail.outbox[0].subject, "GreedyBear - Please Verify Your Email Address")
+        self.assertEqual(mail.outbox[0].subject, "HoneyBadger - Please Verify Your Email Address")
         self.assertEqual(mail.outbox[0].to[0], "testregisteruser@test.com")
-        self.assertEqual(mail.outbox[1].subject, "GreedyBear - Please Verify Your Email Address")
+        self.assertEqual(mail.outbox[1].subject, "HoneyBadger - Please Verify Your Email Address")
         self.assertEqual(mail.outbox[1].to[0], "testregisteruser@test.com")
 
         self.assertEqual(200, response.status_code, msg=msg)
@@ -245,7 +245,7 @@ class TestUserAuth(CustomOAuthTestCase):
             "username": "blahblah",
             "first_name": "blahblah",
             "last_name": "blahblah",
-            "password": "greedybear",
+            "password": "honeybadger",
         }
 
         response = self.client.post(register_uri, body)
@@ -271,7 +271,7 @@ class TestUserAuth(CustomOAuthTestCase):
             "username": "blahblah",
             "first_name": "blahblah",
             "last_name": "blahblah",
-            "password": "greedybeargreedybear$",
+            "password": "honeybadgerhoneybadger$",
         }
 
         response = self.client.post(register_uri, body)

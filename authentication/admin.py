@@ -1,10 +1,10 @@
-# This file is a part of GreedyBear https://github.com/honeynet/GreedyBear
+# This file is a part of HoneyBadger https://github.com/honeybadger/HoneyBadger
 # See the file 'LICENSE' for copying permission.
 from typing import Optional
 
 import email_utils
-from certego_saas.apps.user.admin import AbstractUserAdmin
-from certego_saas.apps.user.models import User
+from badgercorp_saas.apps.user.admin import AbstractUserAdmin
+from badgercorp_saas.apps.user.models import User
 from django.conf import settings
 from django.contrib import admin, messages
 from django.db.models import Q
@@ -21,7 +21,7 @@ class UserProfileInlineAdmin(admin.StackedInline):
     model = UserProfile
 
 
-# certego-saas
+# badgercorp-saas
 @admin.register(User)
 class UserAdminView(AbstractUserAdmin):
     inlines = (UserProfileInlineAdmin,)
@@ -51,7 +51,7 @@ class UserAdminView(AbstractUserAdmin):
             email_utils.send_email(
                 from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[user.email],
-                subject="GreedyBear - Your account request has been declined",
+                subject="HoneyBadger - Your account request has been declined",
                 template_name="authentication/emails/account-declined",
                 context={
                     "full_name": user.get_full_name(),
@@ -83,7 +83,7 @@ class UserAdminView(AbstractUserAdmin):
             email_utils.send_email(
                 from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[user.email],
-                subject="GreedyBear - Your account has been successfully activated!",
+                subject="HoneyBadger - Your account has been successfully activated!",
                 template_name="authentication/emails/account-activated",
                 context={
                     "full_name": user.get_full_name(),
@@ -144,7 +144,7 @@ class CustomAuthTokenAdmin(AuthTokenAdmin):
         if not obj:
             return [
                 (
-                    "Create token for PyGreedyBear",
+                    "Create token for PyHoneyBadger",
                     {
                         "fields": ("user",),
                         "description": """

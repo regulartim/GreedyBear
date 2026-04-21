@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col, Container } from "reactstrap";
 import { FaTwitter } from "react-icons/fa";
 
-import { ScrollToTopButton, Toaster, useToastr } from "@certego/certego-ui";
+import { ScrollToTopButton, Toaster, useToastr } from "@badgercorp/badgercorp-ui";
 
 import { VERSION } from "../constants/environment";
 
@@ -39,12 +39,12 @@ function AppFooter() {
           >
             <Col>
               <a
-                href="https://twitter.com/intel_owl"
+                href="https://twitter.com/honey_badger"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ms-md-2 twitter-follow-button"
               >
-                <FaTwitter /> Follow @intel_owl
+                <FaTwitter /> Follow @honey_badger
               </a>
             </Col>
           </Row>
